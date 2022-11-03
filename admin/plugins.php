@@ -8,7 +8,7 @@
 	$currentPlugins = get_plugins();
 
 	echo '<table id="pluginsTable">';
-	echo '<thead><tr><th>Plugins</th><th>Description</th><th>Number</th></thead>';
+	echo '<thead><tr><th>Plugin Name</th><th>Folder</th><th>Network Activated</th><th>Description</th><th>Number</th></thead>';
 
 	foreach($currentPlugins as $pluginRef => $pluginObject)
 	{
@@ -40,11 +40,21 @@
 		echo '<tr class="'.$rowClass.'">';
 		echo '<td valign="top" width="200px" class="'.$tdClass.'">';
 		echo '<span style="font-size:14px"><a href="'.$pluginLink.'">'.$thisPluginName.'</a></span>';
+		echo '</td><td>';
+
+		echo $thisPlugin;
+		echo '</td><td>';
 		if($pluginIsNetworkActivated==true)
 		{
-			echo '<br/>Network activated';
+			echo 'Yes';
+		}
+		else
+		{
+			echo 'No';
 		}
 		echo '</td>';
+
+
 		echo '<td valign="top" style="color:#808080;">';
 		echo $pluginDescription;
 		if($version){echo '<br/><span style="font-size:9px">Version '.$version.'</span>';}
