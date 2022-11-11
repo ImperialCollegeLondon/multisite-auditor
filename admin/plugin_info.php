@@ -9,7 +9,7 @@
 
 	// Get the plugin dir and then the plugin info
 	$pluginRef = get_home_path();
-	$pluginRef.='/wp-content/plugins/'.$pluginName.'/'.$pluginName.'.php';
+	$pluginRef.='/content/plugins/'.$pluginName.'/'.$pluginName.'.php';
 	$pluginInfo = get_plugin_data( $pluginRef , true );
 	$pluginFullName = $pluginInfo['Name'];
 	$pluginVersion = $pluginInfo['Version'];
